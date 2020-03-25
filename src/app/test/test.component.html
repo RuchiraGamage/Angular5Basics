@@ -1,0 +1,36 @@
+<!--this is component to practice-->
+
+<div class="container">
+  <button class="btn btn-primary" (mouseover)="mouseHoverOnButton()" [disabled] = "newServerCreation" >Create new Server</button>
+  <button class="btn btn-primary" (click)="allowNewServerChangeState()">active dative above button</button>
+  <br>
+
+  <div class="container">
+    <p>server status : {{ serverStatus }}</p>
+
+    <label>Input server details you want :</label>
+    <input type="text" class="form-control" (input)="autoUpdateServerName($event)">
+
+  </div>
+
+  <button [ngStyle]="{backgroundColor:getBackgroundColour()}" class="btn btn-primary" (click)="showServerName()">submit server</button>
+  <label>{{ label }}</label>
+
+  <p *ngIf="showServerNameClicked; else noServerCreated ">server details : {{ label }}</p>
+
+  <ng-template #noServerCreated>
+    <p>server not created</p>
+  </ng-template>
+
+  <!--
+    <div class="container">
+      <input type="text" class="form-control" [(ngModel)]="paragraph">
+      <button class="btn btn-primary" (click)="addToList()">Enter new Para</button>
+    </div>
+
+    <div class="container">
+      <p *ngFor="let p of listOfPara; let i =index " [ngStyle]="{backgroundColor:i>=3?'green':'red'}">{{p}}</p>
+    </div>
+  -->
+
+</div>
