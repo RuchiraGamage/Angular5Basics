@@ -1,10 +1,32 @@
-<div class="container">
- <app-header></app-header>
-</div>
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <p>lets start the project</p>
   </div>
+    <br>
+    <app-recipes></app-recipes>
+    <app-shopping-list></app-shopping-list>
 </div>
+
+<!--Data binding related content-->
+
+<!--<div class="container">-->
+<!--  <app-cockpit-->
+<!--    (onServerCreated)="serverCreated($event)"-->
+<!--    (onBlueprintCreated)="blueprintCreated($event)"-->
+<!--  ></app-cockpit>-->
+<!--  <hr>-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <app-server-element *ngFor="let server of serverElements" [element]="server">-->
+<!--        <p #contentParagraph>-->
+<!--          <strong *ngIf="server.type === 'server'" style="color: red">{{ server.content }}</strong>-->
+<!--          <em *ngIf="server.type === 'blueprint'">{{ server.content }}</em>-->
+<!--        </p>-->
+<!--      </app-server-element>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
 
 
