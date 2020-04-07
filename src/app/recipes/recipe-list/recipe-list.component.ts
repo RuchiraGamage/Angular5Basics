@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { RecipeModel } from '../recipe.model';
 
 @Component({
@@ -15,9 +15,17 @@ export class RecipeListComponent implements OnInit {
       'https://www.momontimeout.com/wp-content/uploads/2018/11/chicken-stir-fry.jpg')
   ];
 
+  // tslint:disable-next-line:no-output-rename
+  @Output() currentRecipeModel = new EventEmitter<RecipeModel>();
+  // @Output() currentRecipeModel = new EventEmitter<{name: string, desc: string, imageUrl: string}>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  showInDescription(i: number) {
+    this.currentRecipeModel.emit(this.recipes[i]);
+    // this.currentRecipeModel.emit({name: this.recipes[i].name, desc: this.recipes[i].description, imageUrl:this.recipes[i].imageUrl});
+  }
 }

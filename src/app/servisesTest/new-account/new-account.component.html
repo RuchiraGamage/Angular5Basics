@@ -1,0 +1,16 @@
+<div class="div col-md-12">
+  <hr>
+  <input class="form-control" type="text" id="accountName" [(ngModel)]="name">
+  <hr>
+  <div class="dropdown" appDropdown>
+    <button class="dropdown-toggle">Select Type<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li (click)="status='active'">Active</li>
+      <li (click)="status='inactive'">Inactive</li>
+      <li (click)="status='unknown'">Unknown</li>
+    </ul>
+  </div>
+  <hr>
+  <button class="btn btn-success" (click)="addNewAccount()">ADD Account</button>
+  <hr>
+</div>
