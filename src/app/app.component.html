@@ -1,14 +1,16 @@
-<app-header></app-header>
-<div class="container">
-  <div class="row">
-    <p>lets start the project</p>
-  </div>
-    <br>
-    <app-recipes></app-recipes>
-    <app-shopping-list></app-shopping-list>
-</div>
+<!--working app-->
 
-<!--Data binding related content-->
+<!--<app-header (routeToThisPage)="routing($event)"></app-header>-->
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <p>lets start the project</p>-->
+<!--  </div>-->
+<!--    <br>-->
+<!--    <app-recipes *ngIf="defaultPage==='recipe'"></app-recipes>-->
+<!--    <app-shopping-list *ngIf="defaultPage==='shopping-list'"></app-shopping-list>-->
+<!--</div>-->
+
+<!--Data binding related test-->
 
 <!--<div class="container">-->
 <!--  <app-cockpit-->
@@ -27,6 +29,12 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
+
+<!--services test-->
+<div>
+  <app-new-account (newAccount)="addNewAcc($event)"></app-new-account>
+  <app-account (changedStatus)="changeStatusofAccount($event)" *ngFor="let a of accountArray;let i= index" [account]="a" [accountId]="i"></app-account>
+</div>
 
 
 

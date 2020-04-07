@@ -1,0 +1,9 @@
+<div class="div col-md-8">
+  <p>{{account.name}}</p>
+  <p>This account is {{account.status}}</p>
+  <div class="row">
+    <button class="btn btn-success" (click)="changeStatus('active')">Set to Active</button>
+    <button class="btn btn-success" (click)="changeStatus('inactive')">Set to Inactive</button>
+    <button class="btn btn-success" (click)="changeStatus('unknown')">Set to Unknown</button>
+  </div>
+</div>

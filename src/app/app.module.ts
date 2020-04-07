@@ -13,6 +13,12 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { CockpitComponent } from './data-bind/cockpit/cockpit.component';
 import { ServerElementComponent } from './data-bind/server-element/server-element.component';
+import {BasicHighlightDirective} from './basic-highlight/basic-highlight.directive';
+import { BatterHighlightDirective } from './batter-highlight/batter-highlight.directive';
+import { UnlessDirective } from './unless/unless.directive';
+import { DropdownDirective } from './shared/dropdown/dropdown.directive';
+import { NewAccountComponent } from './servisesTest/new-account/new-account.component';
+import { AccountComponent } from './servisesTest/account/account.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { ServerElementComponent } from './data-bind/server-element/server-elemen
     ShoppingListComponent,
     ShoppingEditComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    BasicHighlightDirective,
+    BatterHighlightDirective,
+    UnlessDirective,
+    DropdownDirective,
+    NewAccountComponent,
+    AccountComponent
   ],
     imports: [
         BrowserModule,

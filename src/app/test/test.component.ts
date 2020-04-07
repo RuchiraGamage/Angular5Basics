@@ -14,6 +14,12 @@ export class TestComponent implements OnInit {
   label = '';
   showServerNameClicked = false;
 
+  // onlyOdd = false;
+  // oddNumbers = [1, 3, 5];
+  // evenNmbers = [2, 4, 6];
+  // numberformatinstructionpara = 'only show odd numbers'
+  // nuber = 5;
+
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -53,4 +59,13 @@ export class TestComponent implements OnInit {
   getBackgroundColour() {
     return this.showServerNameClicked === true ? 'green' : 'red' ;
   }
+
+  // numberformatchange() {
+  //   this.onlyOdd = !this.onlyOdd;
+  //   if (this.onlyOdd){
+  //     this.numberformatinstructionpara = 'only show even numbers';
+  //   } else {
+  //     this.numberformatinstructionpara = 'only show odd numbers ' ;
+  //   }
+  // }
 }
