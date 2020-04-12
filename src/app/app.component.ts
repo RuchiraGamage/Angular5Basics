@@ -8,18 +8,27 @@
 // export class AppComponent {
 //   title = 'app' ;
 // }
-import {Component} from '@angular/core';
+
+import {Component, OnInit} from '@angular/core';
+import {AccountService} from './account.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   defaultPage = 'recipe';
 
-  accountArray = [{name: 'Ruchira', status: 'active'}, {name: 'Lahiru', status: 'active'}];
+  accountArray = [];
+
+  constructor(private accountService: AccountService) {
+  }
+
+  ngOnInit() {
+    this.accountArray = this.accountService.getAccount();
+  }
   // serverElements = [{type: 'server', name: 'server1', content: 'just to test'}];
   //
   // serverCreated(serverData: {serverName: string , serverContent: string}) {
@@ -39,14 +48,5 @@ export class AppComponent {
   // }
   routing(page: string) {
     this.defaultPage = page;
-  }
-
-  addNewAcc(newacc: { name: string; status: string }) {
-    this.accountArray.push(newacc);
-  }
-
-  changeStatusofAccount(chngedAcc: { newstate: string; id: number }) {
-    this.accountArray[chngedAcc.id].status = chngedAcc.newstate;
-    console.log(this.accountArray[chngedAcc.id].status );
   }
 }

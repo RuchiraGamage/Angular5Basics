@@ -19,6 +19,8 @@ import { UnlessDirective } from './unless/unless.directive';
 import { DropdownDirective } from './shared/dropdown/dropdown.directive';
 import { NewAccountComponent } from './servisesTest/new-account/new-account.component';
 import { AccountComponent } from './servisesTest/account/account.component';
+import {AccountService} from './account.service';
+import {LoggingService} from './logging.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { AccountComponent } from './servisesTest/account/account.component';
         BrowserModule,
         FormsModule
     ],
-  providers: [],
+  providers: [AccountService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

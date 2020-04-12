@@ -32,8 +32,8 @@
 
 <!--services test-->
 <div>
-  <app-new-account (newAccount)="addNewAcc($event)"></app-new-account>
-  <app-account (changedStatus)="changeStatusofAccount($event)" *ngFor="let a of accountArray;let i= index" [account]="a" [accountId]="i"></app-account>
+  <app-new-account></app-new-account>
+  <app-account *ngFor="let a of accountArray;let i= index" [account]="a" [accountId]="i"></app-account>
 </div>
 
 
