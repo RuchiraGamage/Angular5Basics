@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {IngredientModel} from '../../shared/ingredient.model';
+import {ShoppinglistService} from '../shoppinglist.service';
 
 
 @Component({
@@ -9,16 +10,16 @@ import {IngredientModel} from '../../shared/ingredient.model';
 })
 export class ShoppingEditComponent implements OnInit {
 
-  @Output() newIngredient = new EventEmitter<IngredientModel>();
   @ViewChild('name') newIngredientName: ElementRef;
   @ViewChild('amount') newIngredientAmount: ElementRef;
 
-  constructor() { }
+  constructor(private shopService: ShoppinglistService) { }
 
   ngOnInit(): void {
   }
 
   addNewIngredient() {
-    this.newIngredient.emit(new IngredientModel(this.newIngredientName.nativeElement.value, this.newIngredientAmount.nativeElement.value));
+    // tslint:disable-next-line:max-line-length
+    this.shopService.addNewIngredient(new IngredientModel(this.newIngredientName.nativeElement.value, this.newIngredientAmount.nativeElement.value));
   }
 }

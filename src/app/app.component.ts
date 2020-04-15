@@ -21,32 +21,49 @@ export class AppComponent implements OnInit {
 
   defaultPage = 'recipe';
 
-  accountArray = [];
-
   constructor(private accountService: AccountService) {
   }
 
   ngOnInit() {
-    this.accountArray = this.accountService.getAccount();
   }
-  // serverElements = [{type: 'server', name: 'server1', content: 'just to test'}];
-  //
-  // serverCreated(serverData: {serverName: string , serverContent: string}) {
-  //   this.serverElements.push({
-  //     type: 'server',
-  //     name: serverData.serverName,
-  //     content: serverData.serverContent
-  //   });
-  // }
-  //
-  // blueprintCreated(blueprintData: {serverName: string , serverContent: string}) {
-  //   this.serverElements.push({
-  //     type: 'blueprint',
-  //     name: blueprintData.serverName,
-  //     content: blueprintData.serverContent
-  //   });
-  // }
   routing(page: string) {
     this.defaultPage = page;
   }
 }
+
+
+
+//
+// export class AppComponent implements OnInit {
+//
+//   defaultPage = 'recipe';
+//
+//   accountArray = [];
+//
+//   constructor(private accountService: AccountService) {
+//   }
+//
+//   ngOnInit() {
+//     this.accountArray = this.accountService.getAccount();
+//   }
+//   serverElements = [{type: 'server', name: 'server1', content: 'just to test'}];
+//
+//   serverCreated(serverData: {serverName: string , serverContent: string}) {
+//     this.serverElements.push({
+//       type: 'server',
+//       name: serverData.serverName,
+//       content: serverData.serverContent
+//     });
+//   }
+//
+//   blueprintCreated(blueprintData: {serverName: string , serverContent: string}) {
+//     this.serverElements.push({
+//       type: 'blueprint',
+//       name: blueprintData.serverName,
+//       content: blueprintData.serverContent
+//     });
+//   }
+//   routing(page: string) {
+//     this.defaultPage = page;
+//   }
+// }
