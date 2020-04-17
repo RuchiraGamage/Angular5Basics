@@ -10,6 +10,26 @@
 <!--    <app-shopping-list *ngIf="defaultPage==='shopping-list'"></app-shopping-list>-->
 <!--</div>-->
 
+
+<!--....................................................................................-->
+<!--routing tutorial-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a routerLink="/">Home</a></li>
+        <li role="presentation"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation"><a [routerLink]="['/users']">Users</a></li>
+      </ul>
+    </div>
+  </div>
+<router-outlet></router-outlet>
+</div>
+
+
+<!--...............................................................................................-->
+
 <!--Data binding related test-->
 
 <!--<div class="container">-->
@@ -30,11 +50,13 @@
 <!--  </div>-->
 <!--</div>-->
 
+<!--...............................................................................................................-->
+
 <!--services test-->
-<div>
-  <app-new-account (newAccount)="addNewAcc($event)"></app-new-account>
-  <app-account (changedStatus)="changeStatusofAccount($event)" *ngFor="let a of accountArray;let i= index" [account]="a" [accountId]="i"></app-account>
-</div>
+<!--<div>-->
+<!--  <app-new-account></app-new-account>-->
+<!--  <app-account *ngFor="let a of accountArray;let i= index" [account]="a" [accountId]="i"></app-account>-->
+<!--</div>-->
 
 
 

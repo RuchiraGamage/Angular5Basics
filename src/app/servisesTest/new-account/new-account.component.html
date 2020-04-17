@@ -3,11 +3,11 @@
   <input class="form-control" type="text" id="accountName" [(ngModel)]="name">
   <hr>
   <div class="dropdown" appDropdown>
-    <button class="dropdown-toggle">Select Type<span class="caret"></span></button>
+    <button class="dropdown-toggle">{{ buttonText }}<span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li (click)="status='active'">Active</li>
-      <li (click)="status='inactive'">Inactive</li>
-      <li (click)="status='unknown'">Unknown</li>
+      <li (click)="statusChanged('active')">Active</li>
+      <li (click)="statusChanged('inactive')">Inactive</li>
+      <li (click)="statusChanged('unknown')">Unknown</li>
     </ul>
   </div>
   <hr>

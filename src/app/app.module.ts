@@ -19,6 +19,24 @@ import { UnlessDirective } from './unless/unless.directive';
 import { DropdownDirective } from './shared/dropdown/dropdown.directive';
 import { NewAccountComponent } from './servisesTest/new-account/new-account.component';
 import { AccountComponent } from './servisesTest/account/account.component';
+import {AccountService} from './account.service';
+import {LoggingService} from './logging.service';
+import {RecipeService} from './recipes/recipe.service';
+import {ShoppinglistService} from './shopping-list/shoppinglist.service';
+import { HomeComponent } from './routing_tutorial/home/home.component';
+import { EditServerComponent } from './routing_tutorial/servers/edit-server/edit-server.component';
+import { ServerComponent } from './routing_tutorial/servers/server/server.component';
+import { ServersComponent } from './routing_tutorial/servers/servers.component';
+import { UserComponent } from './routing_tutorial/users/user/user.component';
+import { UsersComponent } from './routing_tutorial/users/users.component';
+import { ServersService } from './routing_tutorial/servers/servers.service';
+import {Route, RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'users', component: UsersComponent},
+  {path: 'servers', component: ServersComponent}
+];
 
 @NgModule({
   declarations: [
@@ -38,13 +56,26 @@ import { AccountComponent } from './servisesTest/account/account.component';
     UnlessDirective,
     DropdownDirective,
     NewAccountComponent,
-    AccountComponent
+    AccountComponent,
+    HomeComponent,
+    EditServerComponent,
+    ServerComponent,
+    ServersComponent,
+    UserComponent,
+    UsersComponent
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        RouterModule.forRoot(appRoutes)
     ],
-  providers: [],
+  providers: [
+    AccountService,
+    LoggingService,
+    RecipeService,
+    ShoppinglistService,
+    ServersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
