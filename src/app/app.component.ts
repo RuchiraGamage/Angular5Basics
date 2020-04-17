@@ -9,30 +9,47 @@
 //   title = 'app' ;
 // }
 
-import {Component, OnInit} from '@angular/core';
-import {AccountService} from './account.service';
+// .......................................................................
+// main working app
+
+// import {Component, OnInit} from '@angular/core';
+// import {AccountService} from './account.service';
+//
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.css'],
+// })
+// export class AppComponent implements OnInit {
+//
+//   defaultPage = 'recipe';
+//
+//   constructor(private accountService: AccountService) {
+//   }
+//
+//   ngOnInit() {
+//   }
+//   routing(page: string) {
+//     this.defaultPage = page;
+//   }
+// }
+
+// ....................................................................................
+// routing tutorial related content
+
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-
-  defaultPage = 'recipe';
-
-  constructor(private accountService: AccountService) {
-  }
-
-  ngOnInit() {
-  }
-  routing(page: string) {
-    this.defaultPage = page;
-  }
+export class AppComponent {
 }
 
 
 
+// ..................................................................................
 //
 // export class AppComponent implements OnInit {
 //

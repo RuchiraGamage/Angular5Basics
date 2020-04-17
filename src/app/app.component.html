@@ -1,14 +1,34 @@
 <!--working app-->
 
-<app-header (routeToThisPage)="routing($event)"></app-header>
+<!--<app-header (routeToThisPage)="routing($event)"></app-header>-->
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <p>lets start the project</p>-->
+<!--  </div>-->
+<!--    <br>-->
+<!--    <app-recipes *ngIf="defaultPage==='recipe'"></app-recipes>-->
+<!--    <app-shopping-list *ngIf="defaultPage==='shopping-list'"></app-shopping-list>-->
+<!--</div>-->
+
+
+<!--....................................................................................-->
+<!--routing tutorial-->
+
 <div class="container">
   <div class="row">
-    <p>lets start the project</p>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a routerLink="/">Home</a></li>
+        <li role="presentation"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation"><a [routerLink]="['/users']">Users</a></li>
+      </ul>
+    </div>
   </div>
-    <br>
-    <app-recipes *ngIf="defaultPage==='recipe'"></app-recipes>
-    <app-shopping-list *ngIf="defaultPage==='shopping-list'"></app-shopping-list>
+<router-outlet></router-outlet>
 </div>
+
+
+<!--...............................................................................................-->
 
 <!--Data binding related test-->
 
@@ -29,6 +49,8 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
+
+<!--...............................................................................................................-->
 
 <!--services test-->
 <!--<div>-->
