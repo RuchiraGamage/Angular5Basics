@@ -30,13 +30,8 @@ import { ServersComponent } from './routing_tutorial/servers/servers.component';
 import { UserComponent } from './routing_tutorial/users/user/user.component';
 import { UsersComponent } from './routing_tutorial/users/users.component';
 import { ServersService } from './routing_tutorial/servers/servers.service';
-import {Route, RouterModule, Routes} from '@angular/router';
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'users', component: UsersComponent},
-  {path: 'servers', component: ServersComponent}
-];
+import { PageNotFoundComponent } from './routing_tutorial/page-not-found/page-not-found.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -62,12 +57,13 @@ const appRoutes: Routes = [
     ServerComponent,
     ServersComponent,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    PageNotFoundComponent
   ],
     imports: [
         BrowserModule,
         FormsModule,
-        RouterModule.forRoot(appRoutes)
+      AppRoutingModule
     ],
   providers: [
     AccountService,
